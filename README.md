@@ -10,6 +10,16 @@ origin(remote) 是 Repository 的版本
 master(branch) 是 local 端, 正在修改的版本
 平常沒事不要去動到 origin, 如果動到, 可用 git reset --hard 回覆到沒修改的狀態.
 
+ssh-keygen
+cat ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
+
+add SSH key to gitHub
+http://172.xxxxxx.30/profile/keys
+
+git clone git@172.xxxxxx.30:awsome/proj.git
+
+
 // 還原工作目錄至某狀態，放棄變更
 vim myfile
 git commit -m 'my new second commit' --all
