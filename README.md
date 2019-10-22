@@ -1,2 +1,244 @@
 # hello-git
 git memo
+
+ref: https://blog.longwin.com.tw/2009/05/git-learn-initial-command-2009/
+Git 初學筆記 - 指令操作教學
+
+由 project/.git/config 可知: (若有更多, 亦可由此得知)
+
+origin(remote) 是 Repository 的版本
+master(branch) 是 local 端, 正在修改的版本
+平常沒事不要去動到 origin, 如果動到, 可用 git reset --hard 回覆到沒修改的狀態.
+
+// 還原工作目錄至某狀態，放棄變更
+vim myfile
+git commit -m 'my new second commit' --all
+git log
+git reset {1st commit} --hard
+git log
+git status
+cat myfile
+
+在git lab加入local已存在的Project
+網頁操作：增加新project
+http://172.16.201.30/
+Local PC:
+cd existing_folder
+git init
+列出現存的remotes
+git remote
+origin
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!移掉原本可能有的.git!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+rm -rf $(find . -name .git) &&
+!!!!!!!!!!!!!!!!!!!!!!!!!!移掉原本可能有的.git!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+cd existing_folder
+git init
+git remote add origin git@172.16.201.30:qsip2/s-auto-gen3-hlos_dev_boot_r00002.2.git
+git add -f .
+git commit -m "initial commit"
+git push -u origin master
+
+git remote add <proj_name> <url: git://....git
+git remote -v
+origin git://...
+pb git://...?
+
+git add .
+( git add -f . ) for adding files in .gitignore as well 
+git commit
+git push <remote_name> <branch_name>
+通常使用
+git push origin
+或
+git push -u origin master
+(origin: 伺服器)
+或
+git push
+
+Push your currently commit to remote:
+git push origin HEAD:your_remote_branch_name
+
+
+commit 之後...建branch跟推這個branch到remote
+--------------------------------------------
+git checkout -b new_branch_name
+git push origin new_branch_name:new_branch_name
+OR 
+git push origin remote_branch_name
+--------------------------------------------
+
+---------------------------------------------
+git checkout -b newbranch
+git checkout master
+git merge newbranch
+
+git push origin HEAD:master
+---------------------------------------------
+
+Git config組態設定
+查看組態設定
+git config --list --global
+設定
+git config --global user.name XXX
+
+Git status看目前檔案的狀態
+git status
+
+Git 新增檔案
+git add .
+加入modified and tracked files
+git add -u
+
+Git 刪除檔案
+git rm --cached full_filename
+
+Git ls-tree看目前有哪些檔案有被tracked了
+git ls-tree -r master
+
+Git commit
+將所有修改過得檔案都 commit, 但是 新增的檔案 還是得要先git add .
+git commit -a -m 'enter some comments'
+
+Git format-path/Git am
+ref: https://makandracards.com/makandra/2521-git-how-to-create-and-apply-patches
+create and apply patches
+create 2 patch files, one for each commit since HEAD~~
+git format-patch HEAD~~ 
+
+搬code
+1.
+git format-patch --from  0e95f30f836901
+
+使用 git patch 來搬移工作內容
+ref: https://yodalee.blogspot.com/2017/03/git-patch.html
+2.
+從commit-ID之後產生patch(s)
+git format-patch commit-ID
+
+Apply之前可以先檢查
+git apply --check 0001-Patch_File_name
+
+Apply patch
+git am *.patch
+
+考慮在子目錄搬code
+ref: https://git-scm.com/docs/git-format-patch
+git format-patch b55a2be034 -1 --relative . --start-number 2
+-1: 代表在某個SHA 256之後，要做幾個commit
+--relative: 指定要做的patch相對路徑為何，這裡用 . 代表current folder
+--start-number: 指定patch編號從多少開始編
+
+ref: https://git-scm.com/docs/git-am
+git am 000*patch --directory=aop_8155/aop_proc/
+--directory: 因為上面做的patch是在子目錄做的，這裡告訴git am，我要apply到哪個目錄(這裡以aop_8155/aop_proc為例)
+
+
+Git產生新的branch
+列出目前有多少branch
+git branch
+git branch new-branch # 產生新的 branch (名稱: new-branch), 若沒有特別指定, 會由目前所在的 branch / master 直接複製一份.
+git branch -a # 列出所有 branch
+
+Git checkout 切換 branch
+git checkout branch-name   # 切換到 branch-name
+git checkout b newbranch    # 由現在的環境為基礎, 建立新的 branch
+git checkout filename           # 還原檔案到 Repository 狀態
+git checkout - *                     # 恢復到上一次 Commit 的狀態(* 改成檔名, 就可以只恢復那個檔案)
+git checkout .                        #本地所有修改的。没有的提交的，都返回到原来的状态
+
+For all unstaged files in current working directory use:
+discard current folder changes:
+ref: https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git
+git checkout -- .
+
+Git diff
+看某檔案(eg. test.c)曾經被那些commit修改
+cd the_folder_contains_test.c
+gitk test.c
+看某commit (由commit_id指定)與其上個commit有何差異，用Caret ()來指定commit_id的上一個commit
+commit_id取前幾碼即可
+git diff commit_id commit_id
+
+某commit與其parent比對
+git diff commit_id^!
+
+diff the same file between two different commits:
+ref: https://stackoverflow.com/questions/3338126/how-do-i-diff-the-same-file-between-two-different-commits-on-the-same-branch
+$ git diff HEAD^^ HEAD main.c
+$ git diff HEAD^^..HEAD -- main.c
+$ git diff HEAD~2 HEAD -- main.c
+
+git blame path/to/file
+看這個檔案被誰改到
+但不好用，可用
+git log -p -M --follow --stat -- path/to/your/file  
+試試
+ref: https://blog.andrewray.me/a-better-git-blame/
+
+
+Git log
+列出這個檔案的所有log
+git log filename
+
+看樹狀圖
+git log --all --graph
+
+Git stash 暫存
+丟進暫存
+git stash
+
+取出暫存
+git stash pop
+
+How to move master to origin/master?
+ref: https://superuser.com/questions/273172/how-do-i-reset-master-to-origin-master/273199
+git checkout -B master origin/master
+
+
+How to move master to HEAD?
+How do I reset 'master' to 'origin/master'?
+ref: https://stackoverflow.com/questions/26570242/how-to-move-master-to-head
+$ git checkout master
+Switched to branch 'master'
+
+$ git checkout -b experiment_1
+Switched to a new branch 'experiment_1'
+
+# Here we are going to delete master.  Should be safe, since experiment_1
+# was created from this point on the previous command
+
+$ git branch -d master
+Deleted branch master (was 72ea01d).
+
+$ git checkout original_idea 
+Switched to branch 'original_idea'
+
+# Now that we checked out the branch HEAD is pointing to, we can recreate master
+
+$ git checkout -b master
+Switched to a new branch 'master'
+
+
+GUI (TortoiseGit)
+看整份專案在某一版的修改
+於Proj_xxx右鍵"Tortois Git"=>Show log
+在想要觀看的記錄右鍵"Compare with working tree"
+複製Server上的code
+於空資料夾空白處右鍵=>"Git Clone..." 
+=>填入Repository URL (http://xxx, git://xxx)
+=>(選擇性)Load putty key
+=> ok
+我有現有的Proj_yyy，想要加入至Git Server
+Git Server (這裡不是git lab的例子)
+create and move to Proj_yyy folder
+右鍵"Git Create repository here..." 
+勾選"Make it Bare" (?)
+Local PC
+在想要放code的資料夾內右鍵"Git Clone..." 
+URL填入剛才在Git Server建立的Proj_yyy完整路徑 (此處可自行命名資料夾名稱yyy)
+按OK
+把code放入local的yyy資料夾
+在yyy資料夾右鍵=>Tortoise Git=>Add...，勾選要加入的檔案(.o, .pbi不用加)
+commit
+在yyy右鍵"Tortoise Push"
