@@ -11,6 +11,7 @@ master(branch) 是 local 端, 正在修改的版本
 平常沒事不要去動到 origin, 如果動到, 可用 git reset --hard 回覆到沒修改的狀態.
 
 ssh-keygen
+
 cat ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub
 
