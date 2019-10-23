@@ -1,2 +1,4 @@
 # hello-git
-moved to Wiki
+
+
+see my_plain_wiki
