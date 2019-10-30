@@ -1,0 +1,25 @@
+ref: http://jsnwork.kiiuo.com/archives/2849/git-%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%B6%93%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6-git-update-index/
+
+git – 忽略已經被提交的文件 git update-index
+2018-05-29 / JSN / 0 Comments / 246 views
+
+從 git clone 下來以後，通常我們連接到自己 localhost 的 DB 時常 user 與 password 會與 Git Repository 的設定不同。我們修改成本機設定，但卻不想將這份設定 commit 否則會造成其他人連線錯誤。假設我要忽略修改的 configuration.php ，那要使用這個指令
+
+1
+2
+3
+ 
+git update-index --assume-unchanged configuration.php
+ 
+當我們 commit 的時候就看不到對這個設定檔的修改。若要解除忽略可以使用
+
+1
+2
+3
+ 
+git update-index --no-assume-unchanged configuration.php
+ 
+ 
+
+這個用法通常在我們需要變動大量文檔，我們先下 git update-index –no-assume-unchanged 這樣 git commit 會暫時忽略。這期間我們 commit 龐大文件以外的檔案時，可以減少 git 計算龐大文件的時間。
+工作一段落，確定可以 commit 這份龐大文件的時候，我們再下 git update-index –no-assume-unchanged 這樣就能啟用 commit 。
