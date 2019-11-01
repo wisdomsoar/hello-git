@@ -1,0 +1,28 @@
+Reference
+http://yindingtsai.blogspot.com/2010/10/howto-git-diff-meld.html
+
+Prerequisite
+If you use ssh session, also refer to "Open remote Linux GUI application on Windows by Xming" fisrt
+
+Setup
+$ sudo apt-get install meld
+$ vi ~/git-meld.sh
+
+#!/bin/sh
+meld $2 $5
+$ chmod 777 ~/git-meld.sh
+$ git config --global diff.external ~/git-meld.sh
+
+Usage
+$ git diff HEAD^ filename
+#OR
+$ git diff SH256_1 SH256_2
+
+How to set git diff back to a default value?
+https://stackoverflow.com/questions/4955752/set-git-diff-to-a-default-value
+Try
+git config --global --unset diff
+
+and
+
+git config --global --unset diff.external
