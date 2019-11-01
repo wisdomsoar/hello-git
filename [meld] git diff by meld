@@ -2,7 +2,7 @@ Reference
 http://yindingtsai.blogspot.com/2010/10/howto-git-diff-meld.html
 
 Prerequisite
-If you use ssh session, also refer to "Open remote Linux GUI application on Windows by Xming" fisrt
+If you use ssh session, also refer to "Open remote Linux GUI application on Windows by Xming" first
 
 Setup
 $ sudo apt-get install meld
