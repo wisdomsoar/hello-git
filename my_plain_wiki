@@ -160,6 +160,9 @@ discard current folder changes:
 ref: https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git
 git checkout -- .
 
+How to list all the files in a commit?
+git diff-tree --no-commit-id --name-only -r 66bfdf58
+
 Git diff
 看某檔案(eg. test.c)曾經被那些commit修改
 cd the_folder_contains_test.c
