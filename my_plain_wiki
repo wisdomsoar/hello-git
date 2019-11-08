@@ -161,6 +161,7 @@ ref: https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes
 git checkout -- .
 
 How to list all the files in a commit?
+ref: https://stackoverflow.com/questions/424071/how-to-list-all-the-files-in-a-commit
 git diff-tree --no-commit-id --name-only -r 66bfdf58
 
 Git diff
