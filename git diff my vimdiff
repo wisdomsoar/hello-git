@@ -1,0 +1,16 @@
+ref: https://technotales.wordpress.com/2009/05/17/git-diff-with-vimdiff/
+請搭配使用
+https://github.com/wisdomsoar/hello-linux/blob/master/hello_vim
+
+Step 1: add this to your .gitconfig
+
+[diff]
+  external = git_diff_wrapper
+[pager]
+  diff =
+
+Step 2: create a file named git_diff_wrapper, put it somewhere in your $PATH
+
+#!/bin/sh
+
+vimdiff "$2" "$5"
