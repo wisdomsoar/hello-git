@@ -84,6 +84,14 @@ git merge newbranch
 git push origin HEAD:master
 ---------------------------------------------
 
+Resolving a Git conflict with binary files
+ref: https://stackoverflow.com/questions/278081/resolving-a-git-conflict-with-binary-files
+
+$ git checkout --theirs -- path/to/conflicted-file.txt
+OR
+$ git checkout --ours -- path/to/conflicted-file.txt
+
+
 Git config組態設定
 查看組態設定
 git config --list --global
