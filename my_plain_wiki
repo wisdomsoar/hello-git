@@ -158,7 +158,8 @@ git branch -a # 列出所有 branch
 
 Git checkout 切換 branch
 git checkout branch-name              # 切換到 branch-name
-Force a Checkout
+
+Force a Checkout (throw away local changes)
 git checkout -f BRANCH-NAME
 git checkout -f COMMIT-ID
 
