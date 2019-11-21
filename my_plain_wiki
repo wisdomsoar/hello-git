@@ -206,7 +206,9 @@ git log -p -M --follow --stat -- path/to/your/file
 ref: https://blog.andrewray.me/a-better-git-blame/
 
 
-Git log
+git log
+只看commit id/one-line commit message
+git log --oneline
 列出這個檔案的所有log
 git log filename
 
@@ -248,6 +250,7 @@ Switched to branch 'original_idea'
 $ git checkout -b master
 Switched to a new branch 'master'
 
+git tag big_cats 51d54ff
 
 GUI (TortoiseGit)
 看整份專案在某一版的修改
