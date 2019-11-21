@@ -194,6 +194,10 @@ $ git diff HEAD^^ HEAD main.c
 $ git diff HEAD^^..HEAD -- main.c
 $ git diff HEAD~2 HEAD -- main.c
 
+git diff between specific commit and local file
+ref: https://stackoverflow.com/questions/31308033/git-diff-between-specific-commit-and-local-file
+git diff COMMIT1 src/testsuites/file1.c
+
 git blame path/to/file
 看這個檔案被誰改到
 但不好用，可用
