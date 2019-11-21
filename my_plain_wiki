@@ -158,6 +158,10 @@ git branch -a # 列出所有 branch
 
 Git checkout 切換 branch
 git checkout branch-name              # 切換到 branch-name
+Force a Checkout
+git checkout -f BRANCH-NAME
+git checkout -f COMMIT-ID
+
 git checkout b newbranch              # 由現在的環境為基礎, 建立新的 branch
 git checkout filename                 # 還原檔案到 Repository 狀態
 git checkout - *                      # 恢復到上一次 Commit 的狀態(* 改成檔名, 就可以只恢復那個檔案)
