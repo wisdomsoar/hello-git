@@ -43,7 +43,10 @@ rm -rf $(find . -name .git) &&
 cd existing_folder
 git init
 git remote add origin git@172.16.201.30:qsip2/s-auto-gen3-hlos_dev_boot_r00002.2.git
+加入所有檔案(包含被.gitignore內指定的檔案)
+
 git add -f .
+
 git commit -m "initial commit"
 git push -u origin master
 
