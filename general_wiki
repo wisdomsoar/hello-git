@@ -208,6 +208,15 @@ git log -p -M --follow --stat -- path/to/your/file
 試試
 ref: https://blog.andrewray.me/a-better-git-blame/
 
+p: produces patch text
+M: 
+--find-renames[=<n>]
+If generating diffs, detect and report renames for each commit.
+
+--follow: Continue listing the history of a file beyond renames
+
+--stat[=<width>[,<name-width>[,<count>]]]
+Generate a diffstat. By default, as much space as necessary will be used for the filename part, and the rest for the graph part.
 
 git log
 只看commit id/one-line commit message
