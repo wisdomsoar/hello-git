@@ -27,6 +27,8 @@ git log
 git status
 cat myfile
 
+
+
 在git lab加入local已存在的Project
 網頁操作：增加新project
 http://172.16.201.30/
@@ -226,6 +228,10 @@ git log filename
 
 看樹狀圖
 git log --all --graph
+
+在檔案列表顯示「新增」、「更動」、「刪除」等資訊
+git log --name-status
+
 
 Git stash 暫存
 丟進暫存
