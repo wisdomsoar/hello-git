@@ -247,6 +247,7 @@ git checkout -B master origin/master
 
 How to move master to HEAD?
 How do I reset 'master' to 'origin/master'?
+Ans: Force delete master branch and create/checkout it again.
 ref: https://stackoverflow.com/questions/26570242/how-to-move-master-to-head
 $ git checkout master
 Switched to branch 'master'
