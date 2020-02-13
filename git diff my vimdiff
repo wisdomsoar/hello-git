@@ -1,3 +1,14 @@
+最後，還有這簡單方法：
+ref: https://blog.longwin.com.tw/2009/11/vimdiff-vs-git-diff-2009/
+
+git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+git config --global alias.d difftool
+就可以使用 git d filename 或 git d # diff all
+註：git config --global alias.diff difftool 這樣子做沒有用，預設的 diff 不會被吃掉，用此作法需要另外換 alias name
+到此即完成
+
+
 ref: https://technotales.wordpress.com/2009/05/17/git-diff-with-vimdiff/
 請搭配使用
 https://github.com/wisdomsoar/hello-linux/blob/master/hello_vim
