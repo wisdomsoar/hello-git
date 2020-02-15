@@ -27,7 +27,8 @@ R–A–D’–E–HEAD
 
 # detach head and move to D commit
 git checkout <SHA-for-D>
- 
+Switch branches or restore working tree files
+
 =====================================
 E 
 D <----detached HEAD
@@ -41,6 +42,9 @@ R
 # move HEAD to A, but leave the index and working tree as for D
 git reset --soft <SHA-for-A>
 
+Reset current HEAD to the specified state
+--soft: Does not touch the index file or the working tree at all
+
 =====================================
 E 
 D 
@@ -52,7 +56,11 @@ R
 
 # Redo the D commit re-using the commit message, but now on top of A
 git commit -C <SHA-for-D>
- 
+
+-C
+--reuse-message=<commit> 
+Take an existing commit object, and reuse the log message and the authorship information (including the timestamp) when creating the commit.
+
 =====================================
 E 
 D   D' <----HEAD （這就是我們要的：B和C的commit改變就看不到了喔）
@@ -64,7 +72,7 @@ R
 ！！！！！！！！！！！！！！！！！！！！！接下來，我自己試驗不出來！！！！！！！！！！！！！！！！！！！！！
 
 所以我自己改用cherry-pick，把E的commit取過來，
-在刪掉原本的master...
+再刪掉原本的master...
   
 ====================================
 
