@@ -11,9 +11,11 @@ answered Sep 2 '12 at 13:16
 cecheverria
 45544 silver badges33 bronze badges
 14
-This is a workaround, not a solution. It will work for repos but not for gists, and not for the OP due to his corporate firewall. – Patrick Fisher Mar 17 '13 at 5:50 
+This is a workaround, not a solution. It will work for repos but not for gists, and not for the OP due to his corporate firewall. 
+– Patrick Fisher Mar 17 '13 at 5:50 
 And it also means you cannot push anything – Phil Jun 6 '14 at 18:45
 This worked on Windows 7 for me. – JasonH Feb 25 '15 at 21:41
 @cecheverria : github doesn’t accept push over git. – user2284570 Nov 28 '15 at 17:01
 2
-@PatrickFisher But it does work in environments where you don't have the rights to install the curl-devel libraries and/or the sysadmin won't install them promptly. – squipbar Jul 13 '16 at 15:39
+@PatrickFisher But it does work in environments where you don't have the rights to install the curl-devel libraries 
+and/or the sysadmin won't install them promptly. – squipbar Jul 13 '16 at 15:39
