@@ -52,6 +52,9 @@ git add -f .
 git commit -m "initial commit"
 git push -u origin master
 
+git push -u <remote name> <branch name>
+-u: --set-upstream
+
 git remote add <proj_name> <url: git://....git
 git remote -v
 origin git://...
@@ -82,7 +85,9 @@ git push origin remote_branch_name
 --------------------------------------------
 
 ---------------------------------------------
+###create new branch and checkout it
 git checkout -b newbranch
+
 git checkout master
 git merge newbranch
 
