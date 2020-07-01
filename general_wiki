@@ -122,6 +122,18 @@ git rm --cached full_filename
 Git ls-tree看目前有哪些檔案有被tracked了
 git ls-tree -r master
 
+How to stop tracking and ignore changes to a file in Git?
+https://stackoverflow.com/questions/936249/how-to-stop-tracking-and-ignore-changes-to-a-file-in-git
+(1) solution 1
+git rm --cached on each of the files you want to remove from revision control should be fine. 
+As long as your local ignore patterns are correct you won't see these files included in the output of git status.
+Note that this solution removes the files from the repository, so all developers would need to maintain their own local (non-revision controlled) copies of the file
+
+(2) solution 2
+To prevent git from detecting changes in these files you should also use this command:
+git update-index --assume-unchanged [path]
+
+
 Git commit
 將所有修改過得檔案都 commit, 但是 新增的檔案 還是得要先git add .
 git commit -a -m 'enter some comments'
