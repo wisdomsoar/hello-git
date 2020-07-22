@@ -1,0 +1,10 @@
+disable the LFS configuration.
+        Settings => General => Visibility, project features, permissions
+
+
+According the this URL, https://gitlab.com/gitlab-com/support-forum/issues/4310, looks like it’s a defect in the LFS function of the GitLab. 
+Someone suggested to disable the LFS but don’t know if any side effect will pop up and if it works or not. 
+(Disabling the LFS has to be done by administrator for each project)
+
+See https://gitlab.com/gitlab-org/gitlab-ee/issues/10799. The workaround at the moment is to turn off LFS in the project or group settings.
+
