@@ -287,6 +287,9 @@ $ git checkout -b master
 Switched to a new branch 'master'
 
 git tag big_cats 51d54ff
+git tag my_tag_name HEAD
+
+git push --tags
 
 GUI (TortoiseGit)
 看整份專案在某一版的修改
