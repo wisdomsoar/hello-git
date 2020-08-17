@@ -7,5 +7,5 @@
 3. 
 eval $(ssh-agent)
 ssh-add /C/keys/yourkey.key
-
+ssh-add /d/ssh/id_rsa
 
