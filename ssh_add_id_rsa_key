@@ -1,0 +1,19 @@
+
+
+1. ssh-keygen
+
+2. Add this private to git hub/git lab,...
+
+3. 
+eval $(ssh-agent)
+ssh-add /C/keys/yourkey.key
+ssh-add /d/ssh/id_rsa
+
+ref: https://unix.stackexchange.com/questions/58969/how-to-list-keys-added-to-ssh-agent-with-ssh-add
+How to list keys added to ssh-agent with ssh-add?
+$ ssh-add -l
+2048 72:...:eb /home/gert/.ssh/mykey (RSA)
+Or with -L to get the full key in OpenSSH format.
+
+$ ssh-add -L
+ssh-rsa AAAAB3NzaC1yc[...]B63SQ== /home/gert/.ssh/id_rsa
