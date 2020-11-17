@@ -1,4 +1,4 @@
-disable the LFS configuration.
+disable the LFS (Git Large File Storage) configuration:
         Settings => General => Visibility, project features, permissions
 
 
