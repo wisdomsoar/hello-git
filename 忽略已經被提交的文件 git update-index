@@ -5,21 +5,12 @@ git – 忽略已經被提交的文件 git update-index
 
 從 git clone 下來以後，通常我們連接到自己 localhost 的 DB 時常 user 與 password 會與 Git Repository 的設定不同。
 我們修改成本機設定，但卻不想將這份設定 commit 否則會造成其他人連線錯誤。假設我要忽略修改的 configuration.php ，那要使用這個指令
-
-1
-2
-3
  
 git update-index --assume-unchanged configuration.php
  
 當我們 commit 的時候就看不到對這個設定檔的修改。若要解除忽略可以使用
-
-1
-2
-3
  
 git update-index --no-assume-unchanged configuration.php
- 
  
 
 這個用法通常在我們需要變動大量文檔，我們先下 git update-index –no-assume-unchanged 這樣 git commit 會暫時忽略。
