@@ -18,6 +18,9 @@ http://172.xxxxxx.30/profile/keys
 git clone git@172.xxxxxx.30:awsome/proj.git
 
 
+Git show all branches in log
+git config --global log.decorate auto
+
 // 還原工作目錄至某狀態，放棄變更
 vim myfile
 git commit -m 'my new second commit' --all
