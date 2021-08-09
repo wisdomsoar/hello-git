@@ -316,3 +316,30 @@ URL填入剛才在Git Server建立的Proj_yyy完整路徑 (此處可自行命名
 在yyy資料夾右鍵=>Tortoise Git=>Add...，勾選要加入的檔案(.o, .pbi不用加)
 commit
 在yyy右鍵"Tortoise Push"
+
+
+情境題
+Q1 我現在在"main_branch"，而伺服器上的try_branch是錯的commit，如何修正?
+*---------HEAD->manin_branch
+*   * origin/master, master, try_branch, SHA_ID123
+*   |
+*---'
+*
+*
+Ans:
+
+git checkout master
+git revert --no-edit SHA_ID123
+git push
+git merge main_branch
+
+
+
+
+
+
+
+
+
+
+
