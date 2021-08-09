@@ -138,7 +138,7 @@ git update-index --assume-unchanged [path]
 
 
 Git commit
-將所有修改過得檔案都 commit, 但是 新增的檔案 還是得要先git add .
+將所有修改過的檔案都 commit, 但是 新增的檔案 還是得要先git add .
 git commit -a -m 'enter some comments'
 
 Git format-path/Git am
