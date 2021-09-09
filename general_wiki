@@ -30,6 +30,13 @@ git log
 git status
 cat myfile
 
+在yocto做patch
+git reset <sha-id> --soft
+git reset HEAD *
+git add OOOOOOOOXXXXXXXXXXXX
+git commit -m "OOOOXXXX"
+git format-patch HEAD^..HEAD
+
 
 
 在git lab加入local已存在的Project
