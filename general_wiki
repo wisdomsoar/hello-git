@@ -11,7 +11,8 @@ master(branch) 是 local 端, 正在修改的版本
 加Key
 eval $(ssh-agent)
 ssh-add /d/ssh/id_rsa
-
+####For gitub
+git remote set-url origin git@github.com:USERNAME/YOUR_REPO_NAME.git
 
 ssh-keygen
 cat ~/.ssh/id_rsa
