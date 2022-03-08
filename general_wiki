@@ -293,6 +293,20 @@ Switched to a new branch 'experiment_1'
 
 $ git branch -d master
 Deleted branch master (was 72ea01d).
+git branch -D master (印象要用大寫的D)
+
+# Remove remote branch
+git push origin --delete branch_name
+
+# 如果git branch -a 看到別的origin名字 (如下叫devs)
+remote/devs/JunitTest
+
+# 就用
+git push devs --delete JunitTest
+
+# 失敗的話，重新fetch看看，是不是刪過了..
+git fetch --prune
+
 
 $ git checkout original_idea 
 Switched to branch 'original_idea'
