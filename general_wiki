@@ -295,6 +295,12 @@ $ git branch -d master
 Deleted branch master (was 72ea01d).
 git branch -D master (印象要用大寫的D)
 
+遠端別支有新的code，怎麼更新到local ? (用以下3道指令)
+git checkout local_branch
+### origin/master填入你要追隨的remote branch
+git branch -u origin/master local_branch
+git pull
+
 # Remove remote branch
 git push origin --delete branch_name
 
