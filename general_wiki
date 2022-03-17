@@ -66,6 +66,9 @@ git remote add origin git@172.16.201.30:qsip2/s-auto-gen3-hlos_dev_boot_r00002.2
 git add -f .
 
 git commit -m "initial commit"
+################################################################
+若你有local branch了，就用這個哦
+################################################################
 git push -u origin master
 
 git push -u <remote name> <branch name>
