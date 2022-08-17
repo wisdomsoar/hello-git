@@ -330,6 +330,9 @@ git tag my_tag_name HEAD
 
 git push --tags
 
+Remove tags
+git tag -d tag_name
+
 GUI (TortoiseGit)
 看整份專案在某一版的修改
 於Proj_xxx右鍵"Tortois Git"=>Show log
