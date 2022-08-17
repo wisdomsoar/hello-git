@@ -316,6 +316,12 @@ git push devs --delete JunitTest
 # 失敗的話，重新fetch看看，是不是刪過了..
 git fetch --prune
 
+git fetch時，抓所有remote branch/...commit?
+git checkout --detach
+git fetch origin '+refs/heads/*:refs/heads/*'
+
+此時，就可以看到更多branch
+git branch --all
 
 $ git checkout original_idea 
 Switched to branch 'original_idea'
@@ -328,10 +334,14 @@ Switched to a new branch 'master'
 git tag big_cats 51d54ff
 git tag my_tag_name HEAD
 
+Push local tag to remote
 git push --tags
 
-Remove tags
+Remove (local) tag
 git tag -d tag_name
+
+Remove remote tag
+git push --delete origin tag_name
 
 GUI (TortoiseGit)
 看整份專案在某一版的修改
