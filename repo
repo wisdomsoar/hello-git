@@ -1,0 +1,6 @@
+stderr:
+>> gpg: Signature made Fri 02 May 2014 04:34:18 AM CST
+>> gpg: using RSA key 67B7E448692B382C
+>> gpg: Can't check signature: No public key
+fatal: cloning the git-repo repository failed, will remove '.repo/repo'
+===>  rm -rf ~/.repoconfig  rm -rf ~/.gnupg
