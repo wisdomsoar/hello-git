@@ -346,6 +346,10 @@ git tag -d tag_name
 Remove remote tag
 git push --delete origin tag_name
 
+# added .gitignore in empty folder
+find . -depth -not -path "*target*" -not -path "./.git/*" -type d -empty -print
+find . -depth -not -path "*target*" -not -path "./.git/*" -type d -empty -exec touch {}/.gitignore \;
+
 GUI (TortoiseGit)
 看整份專案在某一版的修改
 於Proj_xxx右鍵"Tortois Git"=>Show log
