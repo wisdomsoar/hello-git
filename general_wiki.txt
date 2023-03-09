@@ -346,6 +346,43 @@ git tag -d tag_name
 Remove remote tag
 git push --delete origin tag_name
 
+這裡抄https://www.codingem.com/git-how-to-delete-tags/
+Example 2: Delete a Tag with the Same Name as a Branch
+Let’s see another concrete example of deleting a remote tag in the case where we have a branch with the same name as the tag.
+
+In my case, I have a tag called feature and a branch called feature.
+
+Let’s verify this by checking what’s on the remote:
+
+ $ git ls-remote      
+From https://github.com/artturijalli/exampleProject.git
+42442b0f66b992b06c004af2ac41578d49a45e10    HEAD
+8772787ba8f708756214e9703629cd127d67debd    refs/heads/feature
+42442b0f66b992b06c004af2ac41578d49a45e10    refs/heads/main
+42442b0f66b992b06c004af2ac41578d49a45e10    refs/heads/new-code-changes
+6b5c8ad92df253f42c56cc8aba296ae194ccf0a1    refs/pull/1/head
+42442b0f66b992b06c004af2ac41578d49a45e10    refs/tags/feature
+3448575bb8d0779aa3f459c45503827456f87bba    refs/tags/v2.0
+3448575bb8d0779aa3f459c45503827456f87bba    refs/tags/v3.0
+The refs/tags/feature means there’s a tag called feature. The refs/heads/feature means there’s a branch called feature as well.
+
+Now, let’s try to remove the remote feature tag.
+
+ $ git push --delete origin feature 
+error: dst refspec feature matches more than one
+error: failed to push some refs to 'https://github.com/artturijalli/exampleProject.git'
+The error says it all. There are two things named feature in the remote so it doesn’t know what to remove. Because the command doesn’t specifically target tags, it doesn’t know what to do so it throws an error.
+
+In this case, let’s remove the tag with the other variant of git push command you learned earlier:
+
+ $ git push origin :refs/tags/feature 
+To https://github.com/artturijalli/exampleProject.git
+ - [deleted]         feature
+Now the removal was successful!
+
+
+
+
 # added .gitignore in empty folder
 find . -depth -not -path "*target*" -not -path "./.git/*" -type d -empty -print
 find . -depth -not -path "*target*" -not -path "./.git/*" -type d -empty -exec touch {}/.gitignore \;
