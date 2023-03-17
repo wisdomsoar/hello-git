@@ -242,6 +242,10 @@ git diff COMMIT1 src/testsuites/file1.c
 產出的diff，show出整份檔案內容 (1000請輸入>=你檔案的行數)
 git diff --no-prefix -U1000
 
+use "git diff" to view the changes for staged files
+git diff --staged
+
+
 git blame path/to/file
 看這個檔案被誰改到
 但不好用，可用
