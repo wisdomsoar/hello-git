@@ -276,6 +276,9 @@ git log --all --graph
 git log --name-status
 
 
+how to combine two commits to one?
+git rebase -i HEAD~2
+
 Git stash 暫存
 丟進暫存
 git stash
