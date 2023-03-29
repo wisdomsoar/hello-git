@@ -217,6 +217,8 @@ git checkout -- .
 How to list all the files in a commit?
 ref: https://stackoverflow.com/questions/424071/how-to-list-all-the-files-in-a-commit
 git diff-tree --no-commit-id --name-only -r 66bfdf58
+這個比較簡單
+git show --name-only <commit-id>
 
 Git diff
 看某檔案(eg. test.c)曾經被那些commit修改
