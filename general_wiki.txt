@@ -436,12 +436,23 @@ git push
 git merge main_branch
 
 
+用repo init/repo sync抓codelinaro的code時，遇到提示要我輸入username: (for ssh connection?)
+(0) 使用google的repo:
+    https://source.android.com/setup/develop?hl=zh-tw#installing-repo
+    ### apt-get不行就手動:
+export REPO=$(mktemp /tmp/repo.XXXXXXXXX)
+curl -o ${REPO} https://storage.googleapis.com/git-repo-downloads/repo
+gpg --recv-key 8BB9AD793E8E6153AF0F9A4416530D5E920F5C65
+curl -s https://storage.googleapis.com/git-repo-downloads/repo.asc | gpg --verify - ${REPO} && install -m 755 ${REPO} ~/bin/repo
 
-
-
-
-
-
-
+(1) 要確定在codelinaro有加入ssh key了: https://git.codelinaro.org/-/profile/keys/1962
+(2) 要確定你使用repo init的地方就是你對應的ssh key:
+    cat ~/.ssh/id_rsa.pub
+    ###跟第一項的比較一下
+(3) ssh-add ~/.ssh/id_rsa (?)
+(4) git config --global url."ssh://git@git.codelinaro.org".insteadOf "https://git.codelinaro.org"
+    ##他會在~/.gitconfig多生出:
+[url "ssh://git@git.codelinaro.org"]
+        insteadOf = https://git.codelinaro.org
 
 
