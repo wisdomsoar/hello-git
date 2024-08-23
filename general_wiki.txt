@@ -220,6 +220,9 @@ git diff-tree --no-commit-id --name-only -r 66bfdf58
 這個比較簡單
 git show --name-only <commit-id>
 
+**************************************************************************************************
+**************************************************************************************************
+**************************************************************************************************
 Git diff
 看某檔案(eg. test.c)曾經被那些commit修改
 cd the_folder_contains_test.c
@@ -247,6 +250,9 @@ git diff --no-prefix -U1000
 use "git diff" to view the changes for staged files
 git diff --staged
 
+**************************************************************************************************
+**************************************************************************************************
+**************************************************************************************************
 
 git blame path/to/file
 看這個檔案被誰改到
@@ -306,9 +312,15 @@ Switched to a new branch 'experiment_1'
 # Here we are going to delete master.  Should be safe, since experiment_1
 # was created from this point on the previous command
 
-$ git branch -d master
-Deleted branch master (was 72ea01d).
-git branch -D master (印象要用大寫的D)
+Delete branch master
+git branch -D master
+
+
+查看某branch (atfwd-watch)中有沒有某個commit (d29f2c0d5f57)
+git merge-base --is-ancestor d29f2c0d5f57 atfwd-watchdog
+echo $?
+然後使用echo $?檢查，看到0代表有包含，看到1代表，該branch沒有此commit d29f2c0d5f57
+
 
 遠端別支有新的code，怎麼更新到local ? (用以下3道指令)
 git checkout local_branch
