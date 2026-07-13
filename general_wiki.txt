@@ -271,6 +271,18 @@ If generating diffs, detect and report renames for each commit.
 --stat[=<width>[,<name-width>[,<count>]]]
 Generate a diffstat. By default, as much space as necessary will be used for the filename part, and the rest for the graph part.
 
+********************************************************************************************
+# 核心前提：當前 checkout 的舊 commit，必須是屬於該 LocalBranch 的歷史節點之一。
+
+我曾經使用git checkout 到舊的commit，這時我想看HEAD(Detached HEAD)到"未來新的commits"，該怎麼看?
+git --no-pager log --first-parent HEAD..LocalBranchName
+
+另外可以看這期間，那些檔案被改動了
+git --no-pager log --first-parent --stat HEAD..LocalBranchName
+
+
+********************************************************************************************
+
 git log
 只看commit id/one-line commit message
 git log --oneline
